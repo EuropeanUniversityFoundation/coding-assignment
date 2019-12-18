@@ -1,0 +1,70 @@
+{% block welcome %}
+  <h1 class="mt-3">Welcome to this simple web development skill test</h1>
+  <div class="lead">Let's code a little bit</div>
+  <div class="lead">There are a couple of tasks in this small test. We want to display here the following information:</div>
+
+  <div class="tasks_group">
+    <div class="task_header">Task 1</div>
+    <div class="task">Great work! You managed to get a web server running and loaded the composer dependencies. You can now proceed with the next tasks...</div>
+  </div>
+
+  <div class="tasks_group">
+    <div class="task_header">Task 2</div>
+    <div class="task">In the second task we would like to display the contents of <code>templates/card.twig</code> in a card element.</div>
+    <div class="task">Add to the twig template at least one <code>card</code> element using the bootstrap library. Make sure the card fulfils the following requirements:
+      <ul>
+        <li>The card must have a title</li>
+        <li>The card must have an image (you can use a placeholder, no need to upload any image) that fits the full width of the card.</li>
+        <li>The card must have a footer with some text and in a different colour.</li>
+      </ul>
+    </div>
+    <div class="hints alert alert-secondary" role="alert">Version 4.3 of the <a href="https://getbootstrap.com/" target="_blank" title="flag-icon-css github page">Bootstrap</a> library is loaded and available.</div>
+    <div class="hints alert alert-warning" role="alert">The result of this task will be automatically displayed near the bottom of this page, under the area labeled 'Solution to task 2', the moment you save the card.twig file and you reload the page. If the result does not appear automatically, check the cache of the browser or use an anonymous session</div>
+  </div>
+
+  <div class="tasks_group">
+    <div class="task_header">Task 3</div>
+    <div class="task">The file <code>src/testController.php</code> needs to be completed.</div>
+    <div class="task">That file extends a controller that fetches information from an institutions API (once an endpoint has been provided) and returns some data in JSON format.</div>
+    <div class="task">We need, at least, the following functions to be implemented in the controller class:
+      <ul>
+        <li>A function returning an array with all the Countries from the API.</li>
+        <li>A function returning an array with all the Universities based in a particular country</li>
+        <li>If needed, extra functions can be used.</li>
+      </ul>
+    </div>
+    <div class="hints alert alert-primary" role="alert">All the documentation needed for this task is available in the folder <code>src/Controller</code>. Take a look at the available code, documentation, functions description, etc. The API used in the controller can be accessed through any browser and will display the JSON data there as well.</div>
+  </div>
+
+  <div class="tasks_group">
+    <div class="task_header">Task 4</div>
+    <div class="task">As you may have seen, the <code>src/testController.php</code> class, extends an existing class that has a render function implemented. You should overwrite that function to generate html code displaying the data you have obtained in the previous task.</div>
+    <div class="task"><strong>The render() function must return a string containing the final html.</strong></div>
+    <div class="task">The desired html for this task is a bootstrap <code>accordion</code> following these requirements:
+      <ul>
+        <li>The accordion must contain one country per header and list all the universities belonging to the country when expanded.</li>
+        <li>The header should include the name of the country and the number of the universities.</li>
+        <li>All the panes must be collapsibles.</li>
+        <li>All the panes must stay closed the moment the accordion is firstly rendered.</li>
+        <li><strong>Extra:</strong> Add a flag in front of all the country names</li>
+      </ul>
+    </div>
+    <div class="hints alert alert-primary" role="alert"><a href="https://github.com/lipis/flag-icon-css" target="_blank" title="flag-icon-css github page">Flag-icon-css</a> and <a href="https://fontawesome.com/" target="_blank" title="flag-icon-css github page">fontawesome</a> libraries are already installed and loaded automatically, you don't need to include them in the composer file. Documentation about those libraries can be found in their respective pages.</div>
+    <div class="hints alert alert-warning" role="alert">The result of this task will be automatically displayed near the bottom of this page, under the area labeled 'Solution to task 4', the moment you save the testController.php file and you reload this page. If the result does not appear automatically, check the cache of the browser or use an anonymous session</div>
+    <div class="task"><strong>The following image can be used as a reference for the output with one panel opened.</strong></div>
+    <div class="task" id="exampleAccordion" data-children=".item">
+      <div class="item">
+        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
+          Show Image
+        </a>
+        <div id="exampleAccordion1" class="collapse" role="tabpanel">
+          <img src="./assets/img/task.png" alt="task1 example" class="img-fluid"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tasks_group">
+    <div class="task_header">Task 5</div>
+    <div class="task">Do a <code>pull request</code> to our GitHub <i class="fab fa-github"></i> repository.</div>
+  </div>
+{% endblock %}

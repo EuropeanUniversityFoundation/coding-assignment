@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    web:
+        image: nginx:latest
+        container_name: "euf_coding_web"
+        volumes:
+            - ./:/www
+            - ./site.conf:/etc/nginx/conf.d/default.conf
+        labels:
+            - 'traefik.backend=euf_coding_web'
+            - 'traefik.port=80'
+            - 'traefik.frontend.rule=Host:euf.localhost'
+
+    php:
+        image: php:fpm
+        container_name: "euf_coding_php"
+        volumes:
+            - ./:/www
+
+    traefik:
+        image: traefik:v1.7.16-alpine
+        container_name: "euf_coding_traefik"
+        command: -c /dev/null --web --docker --logLevel=INFO
+        ports:
+          - '8080:80'
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock

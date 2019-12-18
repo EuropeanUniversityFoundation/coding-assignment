@@ -1,0 +1,15 @@
+{
+  "name": "euf/euf_test",
+  "description": "This is a simple test for new Developers.",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.0",
+    "components/flag-icon-css": "^3.4",
+    "twig/twig": "3.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "EUFTest\\": "src/"
+    }
+  }
+}
