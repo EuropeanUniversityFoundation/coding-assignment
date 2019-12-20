@@ -8,9 +8,7 @@ use EUFTest\Controller\EUFFetcher;
  * Class for the exercise.
  */
 class TestController extends EUFFetcher {
-
-
-
+    
     function getCountries(){
         $response = $this->getRequest("getCountries");
         $response = json_decode($response);
@@ -31,8 +29,6 @@ class TestController extends EUFFetcher {
         $countries = $this->getCountries();
         $i = 1;
         foreach ($countries as $country){
-
-            print  '<span class="flag-icon flag-icon-' . strtolower(array_search($country->CountryName, $countrycodes)) . '"></span>';
 
             $institutions = json_decode($this->getInstitutions(array("CountryID" => $country->ID)));
             $html = $html . '<div class="card">';
