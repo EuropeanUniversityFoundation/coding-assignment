@@ -33,7 +33,7 @@ class InstitutionsApi implements InstitutionsApiInterface {
         curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Content-Type: application/x-www-form-urlencoded']);
         // Execute and get also the response code.
         $resp = curl_exec($curl);
-
+        
         curl_close($curl);
         // We return the JSON directly, not an Array as may be needed.
         return $resp;
