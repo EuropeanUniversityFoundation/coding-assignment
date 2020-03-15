@@ -1,0 +1,7 @@
+[{
+	"country": "Belgium",
+        "universities": ["Ghent University", "Hasselt University"]
+}, {
+	"country": "Spain",
+        "universities": ["Alcalá University", "University of Barcelona", "Jaume I University"]
+}]
