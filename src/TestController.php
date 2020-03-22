@@ -48,7 +48,7 @@ class TestController extends EUFFetcher {
 	}
 
 	/**
-	 * Generate country code from the erasmum code
+	 * Generate country code from the erasmus code
 	 *
 	 * @return string
 	 *   The country code.
