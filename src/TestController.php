@@ -57,8 +57,7 @@ class TestController extends EUFFetcher {
 		if(!empty($erasmusCode)){
 			$code = substr(strtolower($erasmusCode), 0, 2);
 
-			if(trim($code) == "a" && $countryName == "Austria"){
-				$code = "at";
+			if(trim($code) == "a" && $countryName == "Austria"){ $code = "at";
 			} elseif (trim($code) == "nl" && $countryName == "Aruba"){
 				$code = "aw";
 			} elseif (trim($code) == "nl" && $countryName == "Curaçao"){
