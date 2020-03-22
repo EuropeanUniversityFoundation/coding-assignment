@@ -72,6 +72,8 @@ class TestController extends EUFFetcher {
 				$code = "nc";
 			} elseif (trim($code) == "d" && $countryName == "Germany"){
 				$code = "de";
+			} elseif (trim($code) == "dk" && $countryName == "Greenland"){
+				$code = "gl";
 			} elseif (trim($code) == "g" && $countryName == "Greece"){
 				$code = "gr";
 			} elseif (trim($code) == "uk" && $countryName == "Gibraltar"){
@@ -80,6 +82,8 @@ class TestController extends EUFFetcher {
 				$code = "gb";
 			} elseif (trim($code) == "i" && $countryName == "Italy"){
 				$code = "it";
+			} elseif (trim($code) == "ir" && $countryName == "Ireland"){
+				$code = "ie";
 			} elseif (trim($code) == "n" && $countryName == "Norway"){
 				$code = "no";
 			} elseif (trim($code) == "p" && $countryName == "Portugal"){
