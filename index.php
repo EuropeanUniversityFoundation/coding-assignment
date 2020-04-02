@@ -14,7 +14,9 @@ global $_twig;
 $testController = new TestController();
 /* Replace code here (if needed). */
 
-$output_test = $testController->render();
+$countryList = $testController->render();
+
+$output_test = $_twig->render('accordion.twig', ['list' => $countryList]);
 
 /* End of area code can be replaced. */
 // Render our view.

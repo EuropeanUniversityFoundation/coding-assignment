@@ -1,0 +1,19 @@
+<div class="accordion" id="accordionCountries">
+  {% for country, array in list %}
+  <div class="card">
+    <div class="card-header" id="heading{{ array.ID }}">
+        <span class="flag-icon flag-icon-{{ array.CountryCode }}"></span>
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ array.ID }}" aria-expanded="false" aria-controls="collapse{{ array.ID }}">
+          {{ country }} ({{ array.Count }} universities)
+        </button>
+    </div>
+    <div id="collapse{{ array.ID }}" class="collapse" aria-labelledby="heading{{ array.ID }}" data-parent="#accordionCountries">
+      <div class="card-body">
+        {% for hei in array.Institutions %}
+        <p><abbr class="small mr-1" title="{{ hei.ErasmusCode }}"><i class="fas fa-info"></i></abbr> {{ hei.NameInLatinCharacterSet }} <span class="badge badge-default">{{ hei.CityName }}</span></p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
