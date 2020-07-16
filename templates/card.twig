@@ -1,5 +1,21 @@
-<div>
-  <!-- Your code goes here -->
-  I want to be a card...
-  <!-- End of your code -->
+<div id="card">
+    <title>Revolut MasterCard</title>
+    <img src="./assets/img/mastercard.png" alt="Revolut" />
+    <footer style="color:darksalmon;">
+      Sample footer
+    </footer>
 </div>
+
+<script type="text/javascript">
+(function() {
+
+var img = document.getElementById('card').firstChild;
+img.onload = function() {
+    if(img.height > img.width) {
+        img.height = '100%';
+        img.width = 'auto';
+    }
+};
+
+}());
+</script>
