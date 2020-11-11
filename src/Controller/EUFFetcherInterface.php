@@ -14,14 +14,14 @@ interface EUFFetcherInterface {
    *  The endpoint of the API we will perform the request to.
    *  Available $endpoint values: 'getCountries', 'getInstitutions'.
    *
-   * @param array $params
-   *  Array with additional parameters for the query in key=>value format.
-   *  Available keys: CountryID
+   * @param int $param
+   *  Additional parameter for the query.
+   *  Available to pass Country ID value for the 'getInstitutions' endpoint.
    *
    * @return string
-   *   The response of the API call, in a JSON format.
+   *   The response of the API call, in JSON format.
    */
-  public function getRequest($endpoint, $params = null);
+  public function getRequest($endpoint, $param = null);
 
   /**
    * Renders the data from the API request.

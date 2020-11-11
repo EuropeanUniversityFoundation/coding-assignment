@@ -25,8 +25,8 @@ class EUFFetcher implements EUFFetcherInterface {
   /**
    * {@inheritdoc}
    */
-  public function getRequest($endpoint, $params = null) {
-    $resp = $this->api->apiGetRequest($endpoint, $params);
+  public function getRequest($endpoint, $param = null) {
+    $resp = $this->api->apiGetRequest($endpoint, $param);
     return $resp;
   }
 

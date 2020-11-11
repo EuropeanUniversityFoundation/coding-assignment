@@ -12,25 +12,26 @@ class InstitutionsApi implements InstitutionsApiInterface {
      *
      * @var string
      */
-    protected $apiUrl = 'https://institutionsnew.herokuapp.com/'; //Development URL of institutions API
+    protected $apiUrl = 'https://hei.dev.uni-foundation.eu/heiapi/legacy/'; //Development URL of institutions API
 
     /**
      * {@inheritdoc}
      */
-    public function apiGetRequest($endpoint, $params = null)
+    public function apiGetRequest($endpoint, $param = null)
     {
         //Build base URL
         $fullApiURL = $this->apiUrl . $endpoint;
-        if (!is_null($params)){
-            //Add parameters to URL
-            $fullApiURL .= "?";
-            foreach($params as $key=>$value){
-                $fullApiURL .= $key."=".$value."&";
-            }
+
+        if (!is_null($param)){
+            //Add parameter to URL
+            $fullApiURL .= "/";
+            $fullApiURL .= $param;
         }
+
         $curl = curl_init($fullApiURL);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Content-Type: application/x-www-form-urlencoded']);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Content-Type: application/vnd.api+json']);
+
         // Execute and get also the response code.
         $resp = curl_exec($curl);
 
