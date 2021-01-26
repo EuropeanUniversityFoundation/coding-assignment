@@ -15,7 +15,7 @@ class EUFFetcher implements EUFFetcherInterface {
   public $api = NULL;
 
   /**
-   * Contructor.
+   * Constructor.
    */
   public function __construct() {
     // We load here the models that are needed.
@@ -26,7 +26,7 @@ class EUFFetcher implements EUFFetcherInterface {
    * {@inheritdoc}
    */
   public function getRequest($endpoint, $params = null) {
-    $resp = $this->api->apiGetRequest($endpoint, $params);
+    $resp = $this->api->apiGetRequest($endpoint);
     return $resp;
   }
 

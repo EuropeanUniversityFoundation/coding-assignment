@@ -12,22 +12,15 @@ class InstitutionsApi implements InstitutionsApiInterface {
      *
      * @var string
      */
-    protected $apiUrl = 'https://institutionsnew.herokuapp.com/'; //Development URL of institutions API
+    protected $apiUrl = 'https://hei.dev.uni-foundation.eu/institutions/'; // Base URL for the dev instance of the institutions API
 
     /**
      * {@inheritdoc}
      */
-    public function apiGetRequest($endpoint, $params = null)
-    {
+    public function apiGetRequest($endpoint)    {
         //Build base URL
-        $fullApiURL = $this->apiUrl . $endpoint;
-        if (!is_null($params)){
-            //Add parameters to URL
-            $fullApiURL .= "?";
-            foreach($params as $key=>$value){
-                $fullApiURL .= $key."=".$value."&";
-            }
-        }
+        $fullApiURL = $this->apiUrl . $endpoint . '.json';
+
         $curl = curl_init($fullApiURL);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Content-Type: application/x-www-form-urlencoded']);

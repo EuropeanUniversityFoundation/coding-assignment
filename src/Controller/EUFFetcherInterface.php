@@ -12,16 +12,19 @@ interface EUFFetcherInterface {
    *
    * @param string $endpoint
    *  The endpoint of the API we will perform the request to.
-   *  Available $endpoint values: 'getCountries', 'getInstitutions'.
+   *  Note: Endpoint names are case sensitive!
+   *  Available $endpoint value for getting a list of Countries:
+   *  - 'Countries'
    *
-   * @param array $params
-   *  Array with additional parameters for the query in key=>value format.
-   *  Available keys: CountryID
+   *  Available $endpoint values for Institutions in a Country:
+   *  - Country ISO Code (iso_code) values in the response of the 'Countries' endpoint.
+   *  - For example: $endpoint value for getting Institutions in Luxembourg: 'LU'
    *
    * @return string
    *   The response of the API call, in a JSON format.
+   *
    */
-  public function getRequest($endpoint, $params = null);
+  public function getRequest($endpoint);
 
   /**
    * Renders the data from the API request.

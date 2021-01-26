@@ -12,15 +12,13 @@ interface InstitutionsApiInterface {
      *
      * @param string $endpoint
      *  The endpoint of the API we will perform the request to.
-     *  Available $endpoint values: 'getCountries', 'getInstitutions'.
-     *
-     * @param array $params
-     *  Array with additional parameters for the query in key=>value format.
-     *  Available keys: CountryID
+     *  Note: Endpoint names are case sensitive!
+     *  Available $endpoint values: 'Countries' and the values of [iso_code] fetched from the Countries endpoint.
+     *  e.g. endpoint for Luxembourg: 'LU'
      *
      * @return JSON
      *   The response of the API call, in a JSON format.
      */
-    public function apiGetRequest($endpoint, $params = null);
+    public function apiGetRequest($endpoint);
 
 }
