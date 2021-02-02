@@ -17,9 +17,9 @@ class InstitutionsApi implements InstitutionsApiInterface {
     /**
      * {@inheritdoc}
      */
-    public function apiGetRequest($endpoint)    {
+    public function apiGetRequest($endpoint){
         //Build base URL
-        $fullApiURL = $this->apiUrl . $endpoint . '.json';
+        $fullApiURL = $this->apiUrl . $endpoint;
 
         $curl = curl_init($fullApiURL);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
